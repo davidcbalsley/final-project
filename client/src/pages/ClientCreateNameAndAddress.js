@@ -8,8 +8,37 @@ function ClientCreateNameAndAddress() {
 
             <form class="pure-form pure-form-stacked">
                 <fieldset>
+                    {/* First name */}
                     <label for="new-first-name">First name</label>
                     <input type="text" id="new-first-name" />
+
+                    {/* Last name */}
+                    <label for="new-last-name">Last name</label>
+                    <input type="text" id="new-last-name" />
+
+                    {/* Street address */}
+                    <label for="new-street-address">Street address</label>
+                    <input type="text" id="new-last-name" />
+
+                    {/* Apartment number */}
+                    <label for="new-apartment-number">Apartment number</label>
+                    <input type="text" id="new-apartment-number" />
+
+                    {/* City */}
+                    <label for="new-city">City</label>
+                    <input type="text" id="new-city" />
+
+                    {/* State */}
+                    <label for="new-state">State</label>
+                    <select id="new-city">
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>WI</option>
+                    </select>
+
+                    {/* Zip code */}
+                    <label for="new-zip">Zip code</label>
+                    <input type="text" id="new-zip" />
 
                     <button type="submit" class="pure-button pure-button-primary">Submit</button>
                 </fieldset>
