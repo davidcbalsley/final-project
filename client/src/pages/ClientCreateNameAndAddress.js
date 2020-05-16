@@ -30,7 +30,7 @@ function ClientCreateNameAndAddress() {
 
                     {/* State */}
                     <label for="new-state">State</label>
-                    <select id="new-city">
+                    <select id="new-state">
                         <option>IL</option>
                         <option>IN</option>
                         <option>WI</option>
@@ -41,6 +41,7 @@ function ClientCreateNameAndAddress() {
                     <input type="text" id="new-zip" />
 
                     <button type="submit" className="pure-button pure-button-primary">Submit</button>
+                    <p style={{ textAlign: "center" }}>(2 of 4)</p>
                 </fieldset>
             </form>
         </div>

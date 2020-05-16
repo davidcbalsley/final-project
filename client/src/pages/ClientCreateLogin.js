@@ -13,6 +13,7 @@ function ClientCreateLogin() {
                     <label for="new-password">Password</label>
                     <input type="password" id="new-password" />
                     <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    <p style={{ textAlign: "center" }}>(1 of 4)</p>
                 </fieldset>
             </form>
         </div>

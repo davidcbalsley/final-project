@@ -45,6 +45,7 @@ function ClientEnterNumPeopleByAge() {
                     </div>
 
                     <button type="submit" className="pure-button pure-button-primary">Submit</button>
+                    <p style={{ textAlign: "center" }}>(3 of 4)</p>
                 </fieldset>
             </form>
         </div>
