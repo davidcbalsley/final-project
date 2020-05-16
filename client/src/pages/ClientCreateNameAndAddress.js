@@ -3,10 +3,10 @@ import React from "react";
 function ClientCreateNameAndAddress() {
     return (
         <div className="content">
-            {/* Home page title */}
+            {/* Page title */}
             <h4 className="content-head" style={{ textAlign: "center" }}>Great! Please provide us with more information, so that we can finish setting up your account</h4>
 
-            <form class="pure-form pure-form-stacked">
+            <form className="pure-form pure-form-stacked">
                 <fieldset>
                     {/* First name */}
                     <label for="new-first-name">First name</label>
@@ -40,7 +40,7 @@ function ClientCreateNameAndAddress() {
                     <label for="new-zip">Zip code</label>
                     <input type="text" id="new-zip" />
 
-                    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    <button type="submit" className="pure-button pure-button-primary">Submit</button>
                 </fieldset>
             </form>
         </div>
