@@ -6,6 +6,7 @@ import ClientCreateNameAndAddress from "./pages/ClientCreateNameAndAddress";
 import ClientEnterNumPeopleByAge from "./pages/ClientEnterNumPeopleByAge";
 import ClientCreateLicensePlates from "./pages/ClientCreateLicensePlates";
 import ClientConfirmation from "./pages/ClientConfirmation";
+import WorkerEnterLicensePlate from "./pages/WorkerEnterLicensePlate";
 import NoMatch from "./pages/NoMatch";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/ClientEnterNumPeopleByAge" component={ClientEnterNumPeopleByAge} />
           <Route exact path="/ClientCreateLicensePlates" component={ClientCreateLicensePlates} />
           <Route exact path="/ClientConfirmation" component={ClientConfirmation} />
+          <Route exact path="/WorkerEnterLicensePlate" component={WorkerEnterLicensePlate} />
           <Route component={NoMatch} />
         </Switch>
       </div>
