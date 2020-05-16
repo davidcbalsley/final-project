@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import ClientCreateLogin from "./pages/ClientCreateLogin";
 import ClientCreateNameAndAddress from "./pages/ClientCreateNameAndAddress";
 import ClientEnterNumPeopleByAge from "./pages/ClientEnterNumPeopleByAge";
-import ClientCreateLicensePlates from "./pages/ClientCreateLicensePlates"
+import ClientCreateLicensePlates from "./pages/ClientCreateLicensePlates";
+import ClientConfirmation from "./pages/ClientConfirmation";
 import NoMatch from "./pages/NoMatch";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/ClientCreateNameAndAddress" component={ClientCreateNameAndAddress} />
           <Route exact path="/ClientEnterNumPeopleByAge" component={ClientEnterNumPeopleByAge} />
           <Route exact path="/ClientCreateLicensePlates" component={ClientCreateLicensePlates} />
+          <Route exact path="/ClientConfirmation" component={ClientConfirmation} />
           <Route component={NoMatch} />
         </Switch>
       </div>
