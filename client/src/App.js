@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import ClientCreateLogin from "./pages/ClientCreateLogin";
 import ClientCreateNameAndAddress from "./pages/ClientCreateNameAndAddress";
 import ClientEnterNumPeopleByAge from "./pages/ClientEnterNumPeopleByAge";
+import ClientCreateLicensePlates from "./pages/ClientCreateLicensePlates"
 import NoMatch from "./pages/NoMatch";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/ClientCreateLogin" component={ClientCreateLogin} />
           <Route exact path="/ClientCreateNameAndAddress" component={ClientCreateNameAndAddress} />
           <Route exact path="/ClientEnterNumPeopleByAge" component={ClientEnterNumPeopleByAge} />
+          <Route exact path="/ClientCreateLicensePlates" component={ClientCreateLicensePlates} />
           <Route component={NoMatch} />
         </Switch>
       </div>
