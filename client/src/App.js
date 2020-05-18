@@ -1,15 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Homepage from "./pages/home"
-import {BrowserRouter as Router, Route} from "react-router-dom"
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import ClientCreateLogin from "./pages/ClientCreateLogin";
+import ClientCreateNameAndAddress from "./pages/ClientCreateNameAndAddress";
+import ClientEnterNumPeopleByAge from "./pages/ClientEnterNumPeopleByAge";
+import ClientCreateLicensePlates from "./pages/ClientCreateLicensePlates";
+import ClientConfirmation from "./pages/ClientConfirmation";
+import WorkerEnterLicensePlate from "./pages/WorkerEnterLicensePlate";
+import WorkerViewClientInfo from "./pages/WorkerViewClientInfo";
+import WorkerConfirmation from "./pages/WorkerConfirmation";
+import NoMatch from "./pages/NoMatch";
+
 
 function App() {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={Homepage} />
-        
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/ClientCreateLogin" component={ClientCreateLogin} />
+          <Route exact path="/ClientCreateNameAndAddress" component={ClientCreateNameAndAddress} />
+          <Route exact path="/ClientEnterNumPeopleByAge" component={ClientEnterNumPeopleByAge} />
+          <Route exact path="/ClientCreateLicensePlates" component={ClientCreateLicensePlates} />
+          <Route exact path="/ClientConfirmation" component={ClientConfirmation} />
+          <Route exact path="/WorkerEnterLicensePlate" component={WorkerEnterLicensePlate} />
+          <Route exact path="/WorkerViewClientInfo" component={WorkerViewClientInfo} />
+          <Route exact path="/WorkerConfirmation" component={WorkerConfirmation} />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
     </Router>
   );
