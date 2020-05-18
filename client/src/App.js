@@ -1,18 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Temp from "./pages/Temp";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Homepage from "./pages/home"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Temp} />
-          <Route component={NoMatch} />
-        </Switch>
+        <Route exact path="/" component={Homepage} />
+        
       </div>
     </Router>
   );
