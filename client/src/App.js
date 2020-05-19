@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import ClientCreateLogin from "./pages/ClientCreateLogin";
 import ClientCreateNameAndAddress from "./pages/ClientCreateNameAndAddress";
 import ClientEnterNumPeopleByAge from "./pages/ClientEnterNumPeopleByAge";
@@ -9,7 +9,7 @@ import ClientConfirmation from "./pages/ClientConfirmation";
 import WorkerEnterLicensePlate from "./pages/WorkerEnterLicensePlate";
 import WorkerViewClientInfo from "./pages/WorkerViewClientInfo";
 import WorkerConfirmation from "./pages/WorkerConfirmation";
-import NoMatch from "./pages/NoMatch";
+
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/WorkerEnterLicensePlate" component={WorkerEnterLicensePlate} />
           <Route exact path="/WorkerViewClientInfo" component={WorkerViewClientInfo} />
           <Route exact path="/WorkerConfirmation" component={WorkerConfirmation} />
-          <Route component={NoMatch} />
+                 
         </Switch>
       </div>
     </Router>

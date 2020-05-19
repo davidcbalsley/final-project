@@ -1,4 +1,4 @@
-const db = require("../models");
+ 
 
 // Define methods for controllers -- find one, find call, create, update, remove -- here
 module.exports = {

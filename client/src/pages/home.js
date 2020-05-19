@@ -2,9 +2,8 @@ import React, {useState, useEffect} from "react";
 import Container from "../components/container";
 import Row from "../components/row";
 import Column from "../components/column";
-import Table from "../components/table";
-import Textbox from "../components/textbox";
-import API from "../utils/Api"
+import Form from "../components/form";
+import API from "../utils/API"
 import FoodBankContext from "../utils/FoodBankContext"
 
 export default function Homepage(props) {
@@ -18,11 +17,11 @@ const [search,setSearch] = useState("")
   useEffect(() => {
 
     API.search().then(API => {
-      console.log(API.data.results)
+      console.log(API.data)
 
       setFoodBankList({
-        results: API.data.results,
-        original: API.data.results
+        results: API.data,
+        original: API.data
       })
     })
     
@@ -47,8 +46,7 @@ const [search,setSearch] = useState("")
      <Container>
       <Row>
         <Column size="col-sm-6">
-          <Textbox search={search} handleChange={handleChange}  />
-          <Table />
+          <Form />
 
           
         </Column>
