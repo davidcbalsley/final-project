@@ -1,61 +1,41 @@
-import React, {useState, useEffect} from "react";
-import Container from "../components/container";
-import Row from "../components/row";
-import Column from "../components/column";
-import Form from "../components/form";
-import API from "../utils/API"
-import FoodBankContext from "../utils/FoodBankContext"
+import React from "react";
 
-export default function Homepage(props) {
-  const [foodBankList, setFoodBankList] = useState({
-    results: [],
-    original: []
-  })
-  
-const [search,setSearch] = useState("")
-
-  useEffect(() => {
-
-    API.search().then(API => {
-      console.log(API.data)
-
-      setFoodBankList({
-        results: API.data,
-        original: API.data
-      })
-    })
-    
-  }, [])
-  
-  const handleChange = (event) => {
-    const { value } = event.target
-    setSearch(value)
-
-    let newFoodBankList = foodBankList.original.filter(location => {
-        return location.name.first.toLowerCase().indexOf(value.toLowerCase()) > -1
-    })
-
-    setFoodBankList({
-      
-      results: newFoodBankList,
-      original: foodBankList.original
-    })
-}
-  return (
-    <FoodBankContext.Provider value={foodBankList}>
-     <Container>
-      <Row>
-        <Column size="col-sm-6">
-          <Form />
-
+function Home() {
+    return (
+      <div className="content">
+        {/* Home page title */}
+        <h2 className="content-head" style={{ textAlign: "center" }}>Food Bank Project</h2>
+        
+        {/* App motto */}
+        <p style={{ textAlign: "center" }}>Connecting households with food banks, safely, in this time of pandemic</p>
+        
+        <div className="pure-g">
           
-        </Column>
-        <Column size="col-sm-6"></Column>
-      </Row>
-    </Container> 
-   </FoodBankContext.Provider>
+          {/* Sign up button */}
+          <div className="pure-u-1-2">
+            <button className="pure-button pure-button-primary">Sign Up</button>
+          </div>
+          
+          {/* Log in form */}
+          <div className="pure-u-1-2">
+            <form className="pure-form pure-form-stacked">
+              <fieldset>
+                <legend>Log In</legend>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="username" />
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="password" />
+                <button type="submit" className="pure-button pure-button-primary">Sign in</button>
+              </fieldset>
+            </form>
+          </div>
 
+        </div>
 
-    
-  );
-}
+        {/* Link to donate to food pantries */}
+        <a href="/" _target="_blank" style={{ display: "block", textAlign: "center" }}>Donate to your local food bank</a>
+
+      </div>);
+  }
+
+export default Home;
