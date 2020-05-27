@@ -1,10 +1,13 @@
 import React from "react";
+import Button from "../components/Button";
+import Pagetitle from "../components/Pagetitle";
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
       <div className="content">
-        {/* Home page title */}
-        <h2 className="content-head" style={{ textAlign: "center" }}>Food Bank Project</h2>
+        {/* Page title */}
+        <Pagetitle>Food Bank Project</Pagetitle>
         
         {/* App motto */}
         <p style={{ textAlign: "center" }}>Connecting households with food banks, safely, in this time of pandemic</p>
@@ -13,7 +16,11 @@ function Home() {
           
           {/* Sign up button */}
           <div className="pure-u-1-2">
-            <button className="pure-button pure-button-primary">Sign Up</button>
+            <Link to="/ClientCreateLogin">
+              <Button>
+                Sign Up
+              </Button>
+            </Link>
           </div>
           
           {/* Log in form */}
