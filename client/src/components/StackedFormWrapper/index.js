@@ -2,7 +2,7 @@ import React from "react";
 
 function StackedFormWrapper(props) {
     return (
-        <form className="pure-form pure-form-stacked">{props.children}</form>
+        <form className="pure-form pure-form-stacked" { ...props }>{props.children}</form>
     );
 }
 
