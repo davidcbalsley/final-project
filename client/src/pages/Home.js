@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../components/Button";
+import GridHalfScreen from "../components/GridHalfScreen";
+import GridWrapper from "../components/GridWrapper";
 import Pagetitle from "../components/Pagetitle";
 import { Link } from "react-router-dom";
+import StackedFormWrapper from "../components/StackedFormWrapper";
 
 function Home() {
     return (
@@ -12,20 +15,20 @@ function Home() {
         {/* App motto */}
         <p style={{ textAlign: "center" }}>Connecting households with food banks, safely, in this time of pandemic</p>
         
-        <div className="pure-g">
+        <GridWrapper>
           
           {/* Sign up button */}
-          <div className="pure-u-1-2">
+          <GridHalfScreen>
             <Link to="/ClientCreateLogin">
               <Button>
                 Sign Up
               </Button>
             </Link>
-          </div>
+          </GridHalfScreen>
           
           {/* Log in form */}
-          <div className="pure-u-1-2">
-            <form className="pure-form pure-form-stacked">
+          <GridHalfScreen>
+            <StackedFormWrapper>
               <fieldset>
                 <legend>Log In</legend>
                 <label for="username">Username</label>
@@ -34,10 +37,10 @@ function Home() {
                 <input type="password" id="password" placeholder="password" />
                 <button type="submit" className="pure-button pure-button-primary">Sign in</button>
               </fieldset>
-            </form>
-          </div>
+            </StackedFormWrapper>
+          </GridHalfScreen>
 
-        </div>
+        </GridWrapper>
 
         {/* Link to donate to food pantries */}
         <a href="/" _target="_blank" style={{ display: "block", textAlign: "center" }}>Donate to your local food bank</a>
