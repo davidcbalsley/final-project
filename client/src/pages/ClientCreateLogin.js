@@ -15,6 +15,8 @@ function ClientCreateLogin() {
         e.preventDefault();
         console.log("username is " + username);
         console.log("password is " + password);
+
+        // Add check that user has entered values for username and password -- see 19.3.18
     
         // David! At this point, make call to api to create login credentials with username and password
         // If successful, navigate to page where we collect user's info
