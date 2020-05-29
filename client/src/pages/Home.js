@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import axios from "axios";
 import Button from "../components/Button";
 import GridHalfScreen from "../components/GridHalfScreen";
 import GridWrapper from "../components/GridWrapper";
@@ -16,8 +17,34 @@ function Home() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("username is " + username);
-    console.log("password is " + password);
+    console.log("username is " + username); // debug
+    console.log("password is " + password); // debug
+
+    // Check that user entered username and password
+    if (!username || !password) {
+      alert("Please enter a username and password.")  // Future development -- alert more nicely
+    } else {
+      API.postLoginCredentials({
+        email: username,
+        password: password
+      })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+      /*
+      axios.post("/api/login", {
+        email: username,
+        password: password
+      })
+      .then(function() {
+        // window.location.replace("/members");
+        history.push("/ClientConfirmation");
+      })
+      .catch(function(err) {
+        // If there's an error, log the error
+        console.log(err);
+      });
+      */
+    }
 
     // David! At this point, make call to api to check password; if valid, redirect
     /*
@@ -25,59 +52,59 @@ function Home() {
       .then()
       .catch()
     */
-    history.push("/ClientConfirmation");
+    // history.push("/ClientConfirmation");
 
   };
 
-    return (
-      <div className="content">
-        {/* Page title */}
-        <Pagetitle>Food Bank Project</Pagetitle>
+  return (
+    <div className="content">
+      {/* Page title */}
+      <Pagetitle>Food Bank Project</Pagetitle>
+      
+      {/* App motto */}
+      <p style={{ textAlign: "center" }}>Connecting households with food banks, safely, in this time of pandemic</p>
+      
+      <GridWrapper>
         
-        {/* App motto */}
-        <p style={{ textAlign: "center" }}>Connecting households with food banks, safely, in this time of pandemic</p>
+        {/* Sign up button */}
+        <GridHalfScreen>
+          <Link to="/ClientCreateLogin">
+            <Button>
+              Sign Up
+            </Button>
+          </Link>
+        </GridHalfScreen>
         
-        <GridWrapper>
-          
-          {/* Sign up button */}
-          <GridHalfScreen>
-            <Link to="/ClientCreateLogin">
+        {/* Log in form */}
+        <GridHalfScreen>
+          <StackedFormWrapper onSubmit={handleSubmit}>
+            <fieldset>
+              <legend>Log In</legend>
+              <label for="username">Username</label>
+              <input 
+                type="text" 
+                id="username" 
+                placeholder="username"
+                onChange={event => setUsername(event.target.value)} />
+              <label for="password">Password</label>
+              <input 
+                type="password" 
+                id="password" 
+                placeholder="password"
+                onChange={event => setPassword(event.target.value)}/>
               <Button>
-                Sign Up
+                Sign in
               </Button>
-            </Link>
-          </GridHalfScreen>
-          
-          {/* Log in form */}
-          <GridHalfScreen>
-            <StackedFormWrapper onSubmit={handleSubmit}>
-              <fieldset>
-                <legend>Log In</legend>
-                <label for="username">Username</label>
-                <input 
-                  type="text" 
-                  id="username" 
-                  placeholder="username"
-                  onChange={event => setUsername(event.target.value)} />
-                <label for="password">Password</label>
-                <input 
-                  type="password" 
-                  id="password" 
-                  placeholder="password"
-                  onChange={event => setPassword(event.target.value)}/>
-                <Button>
-                  Sign in
-                </Button>
-              </fieldset>
-            </StackedFormWrapper>
-          </GridHalfScreen>
+            </fieldset>
+          </StackedFormWrapper>
+        </GridHalfScreen>
 
-        </GridWrapper>
+      </GridWrapper>
 
-        {/* Link to donate to food pantries */}
-        <a href="/" _target="_blank" style={{ display: "block", textAlign: "center" }}>Donate to your local food bank</a>
+      {/* Link to donate to food pantries */}
+      <a href="/" _target="_blank" style={{ display: "block", textAlign: "center" }}>Donate to your local food bank</a>
 
-      </div>);
+    </div>);
   }
 
 export default Home;
