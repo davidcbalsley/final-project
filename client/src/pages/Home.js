@@ -58,14 +58,16 @@ function Home() {
                   type="text" 
                   id="username" 
                   placeholder="username"
-                  onChange={(event) => setUsername(event.target.value)} />
+                  onChange={event => setUsername(event.target.value)} />
                 <label for="password">Password</label>
                 <input 
                   type="password" 
                   id="password" 
                   placeholder="password"
-                  onChange={(event) => setPassword(event.target.value)}/>
-                <button type="submit" className="pure-button pure-button-primary">Sign in</button>
+                  onChange={event => setPassword(event.target.value)}/>
+                <Button>
+                  Sign in
+                </Button>
               </fieldset>
             </StackedFormWrapper>
           </GridHalfScreen>
