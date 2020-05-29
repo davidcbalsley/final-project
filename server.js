@@ -1,5 +1,4 @@
 const express = require("express");
-
 const mysql = require("mysql");
 const routes = require("./routes");
 const app = express();
@@ -47,9 +46,9 @@ if (process.env.NODE_ENV === "production") {
 
 var db = require("./models")
 
-// db.sequelize.sync().then(function () {
+db.sequelize.sync().then(function () {
   // Start the API server
   app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
-// })
+})
