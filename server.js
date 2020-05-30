@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
 
 var db = require("./models")
 
-db.sequelize.sync().then(function () {
+db.sequelize.sync({ force:true }).then(function () {
   // Start the API server
   app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
