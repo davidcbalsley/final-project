@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import axios from "axios";
 import Button from "../components/Button";
 import GridHalfScreen from "../components/GridHalfScreen";
 import GridWrapper from "../components/GridWrapper";
@@ -17,43 +16,24 @@ function Home() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("username is " + username); // debug
-    console.log("password is " + password); // debug
 
     // Check that user entered username and password
     if (!username || !password) {
       alert("Please enter a username and password.")  // Future development -- alert more nicely
     } else {
-      API.postLoginCredentials({
+      API.verifyLoginCredentials({
         email: username,
         password: password
       })
-      .then(res => console.log(res))
+      .then(res => {
+        // For now, want to see id of newly created user
+        console.log(res);
+
+        // Re-direct to page where client can view and edit personal information
+        history.push("/ClientViewAndEditPersonalInfo");
+      })
       .catch(err => console.log(err));
-      /*
-      axios.post("/api/login", {
-        email: username,
-        password: password
-      })
-      .then(function() {
-        // window.location.replace("/members");
-        history.push("/ClientConfirmation");
-      })
-      .catch(function(err) {
-        // If there's an error, log the error
-        console.log(err);
-      });
-      */
     }
-
-    // David! At this point, make call to api to check password; if valid, redirect
-    /*
-    API.findUserByLogin(username, password)
-      .then()
-      .catch()
-    */
-    // history.push("/ClientConfirmation");
-
   };
 
   return (
