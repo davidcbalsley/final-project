@@ -12,7 +12,7 @@ function Home() {
   const [password, setPassword] = useState();
 
   // Use this to redirect user to new pages
-  let history = useHistory();
+  // let history = useHistory();
 
   const handleSubmit = e => {
     e.preventDefault();

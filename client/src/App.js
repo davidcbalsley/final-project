@@ -10,6 +10,7 @@ import ClientConfirmation from "./pages/ClientConfirmation";
 import WorkerEnterLicensePlate from "./pages/WorkerEnterLicensePlate";
 import WorkerViewClientInfo from "./pages/WorkerViewClientInfo";
 import WorkerConfirmation from "./pages/WorkerConfirmation";
+import Map from "./pages/Map";
 
 
 
@@ -28,7 +29,7 @@ function App() {
           <Route exact path="/WorkerEnterLicensePlate" component={WorkerEnterLicensePlate} />
           <Route exact path="/WorkerViewClientInfo" component={WorkerViewClientInfo} />
           <Route exact path="/WorkerConfirmation" component={WorkerConfirmation} />
-                 
+          <Route exact path="/Map" component={Map}/>      
         </Switch>
       </div>
     </Router>
