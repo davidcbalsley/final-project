@@ -22,7 +22,7 @@ function ClientEnterPersonalInfo() {
       });
 
     // Use this to redirect user to new pages
-    let history = useHistory();
+    // let history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -38,7 +38,7 @@ function ClientEnterPersonalInfo() {
           .then()
           .catch()
         */
-        history.push("/ClientConfirmation");
+        // history.push("/ClientConfirmation");
     
     };
 

@@ -9,7 +9,7 @@ function ClientCreateLogin() {
     const [password, setPassword] = useState();
 
     // Use this to redirect user to new pages
-    let history = useHistory();
+    // let history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -25,7 +25,7 @@ function ClientCreateLogin() {
           .then()
           .catch()
         */
-        history.push("/ClientEnterPersonalInfo");
+        // history.push("/ClientEnterPersonalInfo");
     
       };
 
