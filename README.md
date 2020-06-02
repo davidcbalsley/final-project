@@ -19,23 +19,23 @@ As a manager of a food pantry, I want to provide workers and volunteers with a m
 ### How to Use
 
 For clients:
-- For a new client
--- From the home screen, click the 'Sign Up' button
--- Create your login credentials using your email address and a password that you select
--- Enter your personal information: name, address, number of people in your household, and license plate
--- Review your personal information. If you need to make any changes, click the 'Edit' button
+- For a *new* client
+1. From the home screen, click the 'Sign Up' button
+1. Create your login credentials using your email address and a password that you select
+1. Enter your personal information: name, address, number of people in your household, and license plate
+1. Review your personal information. If you need to make any changes, click the 'Edit' button
 
-- For an existing client
--- From the home screen, enter your login credentials, then click the 'Sign In' button
--- Review your personal information. If you need to make any changes, click the 'Edit' button
+- For an *existing* client
+1. From the home screen, enter your login credentials, then click the 'Sign In' button
+1. Review your personal information. If you need to make any changes, click the 'Edit' button
 
 For a pantry worker or volunteer, at a mobile pantry:
-- From the home screen, enter your login credentials, then click the 'Sign In' button
-- As a car approaches at a mobile pantry, enter the car's license plate number
-- Review the client's information
--- If you need to make any changes, click the 'Edit Info' link
--- If everything looks okay, click the 'Sign for Client' button
--- Click the 'Enter another license plate number' button
+1. From the home screen, enter your login credentials, then click the 'Sign In' button
+1. As a car approaches at a mobile pantry, enter the car's license plate number
+1. Review the client's information
+    1. If you need to make any changes, click the 'Edit Info' link
+    1. If everything looks okay, click the 'Sign for Client' button
+    1. Click the 'Enter another license plate number' button
 
 https://github.com/davidcbalsley/final-project
 
