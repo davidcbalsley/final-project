@@ -35,7 +35,7 @@ For a pantry worker or volunteer, at a mobile pantry:
 1. Review the client's information
     1. If you need to make any changes, click the 'Edit Info' link
     1. If everything looks okay, click the 'Sign for Client' button
-    1. Click the 'Enter another license plate number' button
+1. Click the 'Enter another license plate number' button
 
 https://github.com/davidcbalsley/final-project
 
