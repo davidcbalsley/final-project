@@ -1,24 +1,31 @@
-const express = require("express");
-
-// const mongoose = require("mongoose");
-const mysql = require("mysql");
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
+var express = require("express");
+var db = require("./models");
 const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+const passport = require("./config/passport");
+const session = require("express-session");
 
-// Define middleware here
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = process.env.PORT || 3001;
+
+// Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
+
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
 app.use(routes);
-
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:password1@ds125871.mlab.com:25871/heroku_0xn0jnk7");
 
 // MySQL DB Connection Information (remember to change this with our specific credentials)
 // var connection;
@@ -44,16 +51,27 @@ app.use(routes);
 //   console.log("connected as id " + connection.threadId);
 // });
 
-// Use client/build folder when running on production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+    app.use(express.static("client/build"));
+  }
+// Static directory
+app.use(express.static("public"));
 
-var db = require("./models")
+// Set up passport middleware
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-db.sequelize.sync().then(function () {
-  // Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
-})
+// Routes
+// =============================================================
+// require("./routes/api-routes.js")(app);
+// Add routes, both API and view
+app.use(routes);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force:true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+}); 

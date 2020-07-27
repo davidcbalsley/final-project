@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 
+
 const GoogleMaps = ({ latitude, longitude }) => {
   const renderMarkers = (map, maps) => {
     let marker = new maps.Marker({

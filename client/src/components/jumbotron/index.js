@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Jumbotron({ children }) {
   return (
     <div
@@ -10,5 +11,6 @@ function Jumbotron({ children }) {
     </div>
   );
 }
+
 
 export default Jumbotron;

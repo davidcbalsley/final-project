@@ -1,9 +1,11 @@
 const router = require("express").Router();
-const tempRoutes = require("./temp");
 const foodBankRoutes = require("./FoodBank")
+const clientRoutes = require("./client");
+const userRoutes = require("./user");
 
-// Book routes
-router.use("/temp", tempRoutes);
+// Routes
 router.use("/foodbank", foodBankRoutes);
+router.use("/clients", clientRoutes);
+router.use("/users", userRoutes);
 
 module.exports = router;
